@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function saveObjectToLocalStorage(key, object) {
+          localStorage.setItem(key, JSON.stringify(object));
+        }
+  
+        function savePerson() {
+          const name = document.getElementById('name').value;
+          const age = document.getElementById('age').value;
+          const person = { name: name, age: age };
+          saveObjectToLocalStorage('person', person);
+        }
+      </script>
+</head>
+<body>
+    <div class="my-div">This is my div!</div>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br>
+
+    <label for="age">Age:</label>
+    <input type="text" id="age" name="age"><br>
+
+    <button onclick="savePerson()">Save Person</button>
+
+    <script src="app.js"></script>
+</body>
+</html>
